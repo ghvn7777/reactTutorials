@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import './style.css'
 
 class TodoList extends Component {
     constructor(props) {
@@ -12,8 +13,12 @@ class TodoList extends Component {
     render() {
         return (
             <Fragment>
+                { /*dangerouslySetInnerHTML={{__html: item}}*/ /* 在 li 标签里加这个，作用是不自动转义，例如 <h1>，下面的 item 可以去掉 */ }
                 <div>
+                    <label htmlFor="insertArea">input: </label>
                     <input
+                        id="insertArea"
+                        className='input'
                         value={this.state.inputValue}
                         onChange={this.handleInputChange.bind(this)}
                     />
